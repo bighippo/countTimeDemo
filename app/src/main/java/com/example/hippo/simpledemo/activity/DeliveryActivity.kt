@@ -1,9 +1,10 @@
-package com.example.hippo.simpledemo
+package com.example.hippo.simpledemo.activity
 
-import android.support.v7.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
+import com.example.hippo.simpledemo.R
 
-class DeliveryActivity : AppCompatActivity() {
+class DeliveryActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
