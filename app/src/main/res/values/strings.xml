@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SimpleDemo</string>
+
+    <!-- net work error type -->
+    <string name="service_error">service error</string>
+    <string name="not_found">not_found</string>
+    <string name="timeout">timeout</string>
+    <string name="unexpected_error">unexpected error</string>
+    <string name="network_wrong">network wrong</string>
+
+
+    <string name="delivery_pic_description">Delivery Picture</string>
 </resources>
