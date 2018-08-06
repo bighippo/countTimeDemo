@@ -13,6 +13,7 @@ import com.example.hippo.simpledemo.ui.delivery.presenter.DeliveryListPresenter
 import com.example.hippo.simpledemo.ui.delivery.view.adapter.DeliveryAdapter
 import com.example.hippo.simpledemo.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_delivery_list.*
+import kotlinx.android.synthetic.main.top_bar.*
 import me.yokeyword.fragmentation.SupportFragment
 
 class DeliveryListFragment :SupportFragment(){
@@ -62,6 +63,9 @@ class DeliveryListFragment :SupportFragment(){
     }
 
     private fun initView() {
+        initTitle()
+
+        //insert data to this adapt to show delivery list
         mAdapter = DeliveryAdapter(activity as Context, mDeliveryList)
 
         val layoutManager = LinearLayoutManager(activity)
@@ -71,5 +75,24 @@ class DeliveryListFragment :SupportFragment(){
         rv_delivery_list.addItemDecoration(SpaceItemDecoration(30))
 
         rv_delivery_list.adapter = mAdapter
+
+        //set list item click listener
+        recycleItemClickListener()
+    }
+
+
+    private fun initTitle() {
+        iv_back.visibility = View.GONE
+
+        tv_title.setText(R.string.delivery_list_title)
+    }
+
+
+    private fun recycleItemClickListener() {
+        mAdapter.setOnRecyclerItemClick(object : DeliveryAdapter.OnRecyclerItemClick {
+            override fun onItemClick(position: Int) {
+                start(DeliveryDetailFragment.newInstance(mDeliveryList[position]))
+            }
+        })
     }
 }

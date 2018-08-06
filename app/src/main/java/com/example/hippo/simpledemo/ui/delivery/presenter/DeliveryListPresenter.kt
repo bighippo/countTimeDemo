@@ -1,6 +1,7 @@
 package com.example.hippo.simpledemo.ui.delivery.presenter
 
 import android.content.Context
+import com.example.hippo.simpledemo.cache.CacheProviders
 import com.example.hippo.simpledemo.network.api.DeliveryApi
 import com.example.hippo.simpledemo.network.base.ApiClient
 import com.example.hippo.simpledemo.network.base.ApiErrorModel
@@ -10,6 +11,8 @@ import com.example.hippo.simpledemo.ui.base.presenter.BasePresenter
 import com.example.hippo.simpledemo.ui.base.view.BaseView
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
 import com.example.hippo.simpledemo.ui.delivery.view.DeliveryListView
+import io.rx_cache2.DynamicKey
+import io.rx_cache2.EvictDynamicKey
 
 class DeliveryListPresenter : BasePresenter{
     private val TAG = "DeliveryListPresenter"
@@ -29,7 +32,10 @@ class DeliveryListPresenter : BasePresenter{
     }
 
     fun getDeliveryList() {
-        mDeliveryApi.getDeliveryList(0).compose(NetworkScheduler.compose())
+        val deliveryList = mDeliveryApi.getDeliveryList(0)
+
+        CacheProviders.deliveryCache.getDeliveryList(deliveryList, DynamicKey(0), EvictDynamicKey(false))
+                .compose(NetworkScheduler.compose())
                 .subscribe(object : ApiResponse<List<DeliveryModel>>(mContext!!) {
                     override fun success(data: List<DeliveryModel>) {
                         mDeliveryListView.onSuccess(data)
@@ -38,7 +44,18 @@ class DeliveryListPresenter : BasePresenter{
                     override fun failure(statusCode: Int, apiErrorModel: ApiErrorModel) {
                         mDeliveryListView.onError(apiErrorModel.message)
                     }
-                })
+        })
+
+        /*mDeliveryApi.getDeliveryList(0).compose(NetworkScheduler.compose())
+                .subscribe(object : ApiResponse<List<DeliveryModel>>(mContext!!) {
+                    override fun success(data: List<DeliveryModel>) {
+                        mDeliveryListView.onSuccess(data)
+                    }
+
+                    override fun failure(statusCode: Int, apiErrorModel: ApiErrorModel) {
+                        mDeliveryListView.onError(apiErrorModel.message)
+                    }
+                })*/
     }
 
 }

@@ -5,10 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/activityBackground">
 
+    <include
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        layout="@layout/top_bar" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_delivery_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
         />
 
 </RelativeLayout>

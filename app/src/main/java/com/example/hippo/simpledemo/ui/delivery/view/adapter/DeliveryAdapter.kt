@@ -4,9 +4,10 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.example.hippo.simpledemo.R
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
-import com.example.hippo.simpledemo.widget.glide.GlideApp
+
 import kotlinx.android.synthetic.main.item_delivery.view.*
 
 class DeliveryAdapter: RecyclerView.Adapter<DeliveryAdapter.ViewHolder>{
@@ -32,7 +33,7 @@ class DeliveryAdapter: RecyclerView.Adapter<DeliveryAdapter.ViewHolder>{
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.itemView!!){
             //set the delivery pic
-            GlideApp.with(mContext)
+            Glide.with(mContext)
                     .load(mData[position].imageUrl)
                     //.placeholder(R.drawable.placeholder)
                     //.error()
@@ -43,13 +44,19 @@ class DeliveryAdapter: RecyclerView.Adapter<DeliveryAdapter.ViewHolder>{
 
             //set the delivery location
             tv_delivery_location.text = mData[position].location.address
+
+            //set item click listener
+            rl_root.setOnClickListener{
+                if(mOnRecyclerItemClick != null)
+                    mOnRecyclerItemClick!!.onItemClick(position)
+            }
         }
     }
 
     class ViewHolder(item : View) : RecyclerView.ViewHolder(item)
 
     interface OnRecyclerItemClick {
-        fun onItemClick(view: View, position: Int)
+        fun onItemClick(position: Int)
     }
 
     fun setOnRecyclerItemClick(mOnRecyclerItemClick: OnRecyclerItemClick) {

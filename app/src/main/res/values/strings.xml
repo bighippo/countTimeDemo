@@ -10,4 +10,12 @@
 
 
     <string name="delivery_pic_description">Delivery Picture</string>
+
+    <!-- google api key -->
+    <string name="api_key">AIzaSyC6NWzjeEbskwvp2qOC_36RLL0AA_42xzQ</string>
+
+
+    <string name="delivery_list_title">Thing to Deliver</string>
+
+    <string name="delivery_detail_title">Delivery Details</string>
 </resources>

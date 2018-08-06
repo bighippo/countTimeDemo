@@ -2,13 +2,32 @@
 <resources>
 
     <!-- item delivery -->
-    <dimen name="item_delivery_height">200dp</dimen>
+    <dimen name="item_delivery_height">150dp</dimen>
     <dimen name="item_delivery_pic_width">100dp</dimen>
     <dimen name="item_delivery_pic_height">100dp</dimen>
     <dimen name="item_delivery_pic_margin_left">15dp</dimen>
+    <dimen name="item_delivery_pic_margin_right">15dp</dimen>
     <dimen name="item_delivery_pic_margin_top">15dp</dimen>
     <dimen name="item_delivery_pic_margin_bottom">15dp</dimen>
     <dimen name="item_delivery_text_padding">10dp</dimen>
     <dimen name="item_delivery_description_size">15sp</dimen>
     <dimen name="item_delivery_location_size">18sp</dimen>
+
+    <!-- top bar -->
+    <dimen name="topbar_height">70dp</dimen>
+    <dimen name="back_pic_height">45dp</dimen>
+    <dimen name="back_pic_width">45dp</dimen>
+    <dimen name="topbar_title_text_size">19sp</dimen>
+
+    <!-- google map -->
+    <dimen name="map_height">350dp</dimen>
+
+    <!-- delivery detail-->
+    <dimen name="detail_delivery_height">130dp</dimen>
+    <dimen name="detail_delivery_pic_margin_left">5dp</dimen>
+    <dimen name="detail_delivery_pic_margin_right">5dp</dimen>
+    <dimen name="detail_delivery_pic_margin_top">5dp</dimen>
+    <dimen name="detail_delivery_pic_margin_bottom">5dp</dimen>
+    <dimen name="detail_delivery_description_margin_top">20dp</dimen>
+
 </resources>
