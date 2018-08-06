@@ -11,6 +11,7 @@ object CacheProviders {
             .persistence(DeliveryApplication.application.externalCacheDir!!, GsonSpeaker())
             .using(DeliveryCacheProviders::class.java)
 
+
     //set cache interface
     val deliveryCache: DeliveryCacheProviders
         get() {
