@@ -32,6 +32,8 @@ class DeliveryListPresenter : BasePresenter{
     }
 
     fun getDeliveryList() {
+
+        //set cache and get delivery list from api
         val deliveryList = mDeliveryApi.getDeliveryList(0)
 
         CacheProviders.deliveryCache.getDeliveryList(deliveryList, DynamicKey(0), EvictDynamicKey(false))
@@ -45,17 +47,6 @@ class DeliveryListPresenter : BasePresenter{
                         mDeliveryListView.onError(apiErrorModel.message)
                     }
         })
-
-        /*mDeliveryApi.getDeliveryList(0).compose(NetworkScheduler.compose())
-                .subscribe(object : ApiResponse<List<DeliveryModel>>(mContext!!) {
-                    override fun success(data: List<DeliveryModel>) {
-                        mDeliveryListView.onSuccess(data)
-                    }
-
-                    override fun failure(statusCode: Int, apiErrorModel: ApiErrorModel) {
-                        mDeliveryListView.onError(apiErrorModel.message)
-                    }
-                })*/
     }
 
 }
