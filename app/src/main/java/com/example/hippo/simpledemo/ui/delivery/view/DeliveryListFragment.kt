@@ -65,6 +65,7 @@ class DeliveryListFragment :SupportFragment(){
         top_bar.visibility = View.VISIBLE
     }
 
+
     private fun showNoNet(){
         top_bar.visibility = View.GONE
         btn_reload.setOnClickListener{
