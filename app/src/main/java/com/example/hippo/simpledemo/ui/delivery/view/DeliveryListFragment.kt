@@ -11,6 +11,7 @@ import com.example.hippo.simpledemo.R
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
 import com.example.hippo.simpledemo.ui.delivery.presenter.DeliveryListPresenter
 import com.example.hippo.simpledemo.ui.delivery.view.adapter.DeliveryAdapter
+import com.example.hippo.simpledemo.util.NetworkUtil
 import com.example.hippo.simpledemo.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_delivery_list.*
 import kotlinx.android.synthetic.main.top_bar.*
@@ -51,6 +52,32 @@ class DeliveryListFragment :SupportFragment(){
 
     //load data
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        if(NetworkUtil.isNetworkAvailable(activity)) {
+            init()
+        } else {
+            showNoNet()
+        }
+    }
+
+    private fun hideNoNet(){
+        rv_net_unavailable.visibility = View.GONE
+        top_bar.visibility = View.VISIBLE
+    }
+
+    private fun showNoNet(){
+        top_bar.visibility = View.GONE
+        btn_reload.setOnClickListener{
+            if(NetworkUtil.isNetworkAvailable(activity)) {
+               init()
+            } else {
+                Toast.makeText(activity, R.string.net_unavailable, Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun init() {
+        hideNoNet()
 
         mDeliveryListPresenter.attachView(mDeliveryListView)
         mDeliveryListPresenter.setContext(activity as Context)

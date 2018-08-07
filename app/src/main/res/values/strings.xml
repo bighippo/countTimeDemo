@@ -14,8 +14,11 @@
     <!-- google api key -->
     <string name="api_key">AIzaSyC6NWzjeEbskwvp2qOC_36RLL0AA_42xzQ</string>
 
-
+    <!-- fragment title -->
     <string name="delivery_list_title">Thing to Deliver</string>
-
     <string name="delivery_detail_title">Delivery Details</string>
+
+    <!-- Net Unavailable -->
+    <string name="net_unavailable">Network Unavailable</string>
+    <string name="reload">Reload</string>
 </resources>
