@@ -11,7 +11,9 @@ import com.example.hippo.simpledemo.R
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
 import com.example.hippo.simpledemo.ui.delivery.presenter.DeliveryListPresenter
 import com.example.hippo.simpledemo.ui.delivery.view.adapter.DeliveryAdapter
+import com.example.hippo.simpledemo.util.AppConstants
 import com.example.hippo.simpledemo.util.NetworkUtil
+import com.example.hippo.simpledemo.util.SharedPreferencesUtil
 import com.example.hippo.simpledemo.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_delivery_list.*
 import kotlinx.android.synthetic.main.top_bar.*
@@ -41,6 +43,9 @@ class DeliveryListFragment :SupportFragment(){
         override fun onSuccess(model: List<DeliveryModel>) {
             mDeliveryList = model
 
+            //set cache available flag
+            SharedPreferencesUtil.saveData(activity, AppConstants.CACHE_AVAILABLE,true)
+
             initView()
         }
     }
@@ -56,7 +61,11 @@ class DeliveryListFragment :SupportFragment(){
         if(NetworkUtil.isNetworkAvailable(activity)) {
             init()
         } else {
-            showNoNet()
+            if (SharedPreferencesUtil.getData(activity, AppConstants.CACHE_AVAILABLE, false) as Boolean)
+                init()
+
+            else
+                showNoNet()
         }
     }
 

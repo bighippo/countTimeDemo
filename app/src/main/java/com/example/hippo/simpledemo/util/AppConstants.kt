@@ -8,4 +8,7 @@ object AppConstants{
 
     //set zoom scale here
     internal val ZOOM_SCALE = 14f
+
+    //cache available
+    internal val CACHE_AVAILABLE = "cache_available"
 }
