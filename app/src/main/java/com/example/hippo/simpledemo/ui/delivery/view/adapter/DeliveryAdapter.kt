@@ -1,26 +1,19 @@
 package com.example.hippo.simpledemo.ui.delivery.view.adapter
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 import com.example.hippo.simpledemo.R
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
 
 import kotlinx.android.synthetic.main.item_delivery.view.*
 
-class DeliveryAdapter: RecyclerView.Adapter<DeliveryAdapter.ViewHolder>{
-    var mContext : Context
+class DeliveryAdapter(modelList: List<DeliveryModel>) : RecyclerView.Adapter<DeliveryAdapter.ViewHolder>() {
+    //private var mContext : Context = context
 
     private var mOnRecyclerItemClick: OnRecyclerItemClick? = null
 
-    private var mData : List<DeliveryModel>
-
-    constructor(context: Context, modelList: List<DeliveryModel>) {
-        mContext = context
-        mData = modelList
-    }
+    private var mData : List<DeliveryModel> = modelList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(View.inflate(parent.context, R.layout.item_delivery, null))
@@ -33,11 +26,7 @@ class DeliveryAdapter: RecyclerView.Adapter<DeliveryAdapter.ViewHolder>{
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.itemView!!){
             //set the delivery pic
-            Glide.with(mContext)
-                    .load(mData[position].imageUrl)
-                    //.placeholder(R.drawable.placeholder)
-                    //.error()
-                    .into(iv_delivery)
+            iv_delivery.setImageURI(mData[position].imageUrl)
 
             //set the delivery description
             tv_delivery_description.text = mData[position].description

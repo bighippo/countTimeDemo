@@ -1,4 +1,4 @@
-package com.example.hippo.simpledemo.widget.glide;
+package com.example.hippo.simpledemo.widget.fresco;
 
 import java.security.cert.CertificateException;
 import java.util.concurrent.TimeUnit;

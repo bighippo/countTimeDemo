@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 import com.example.hippo.simpledemo.R
 import com.example.hippo.simpledemo.ui.delivery.model.DeliveryModel
 import com.example.hippo.simpledemo.util.AppConstants
@@ -84,8 +83,7 @@ class DeliveryDetailFragment: SupportFragment(), OnMapReadyCallback {
         initTitle()
 
         // set the delivery pic
-        Glide.with(activity!!).load(mDelivery.imageUrl).into(iv_delivery)
-
+        iv_delivery.setImageURI(mDelivery.imageUrl)
 
         //set the delivery description
         tv_delivery_description.text = mDelivery.description
@@ -107,7 +105,7 @@ class DeliveryDetailFragment: SupportFragment(), OnMapReadyCallback {
     }
 
     private fun initTitle() {
-        tv_title.setText(R.string.delivery_list_title)
+        tv_title.setText(R.string.delivery_detail_title)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

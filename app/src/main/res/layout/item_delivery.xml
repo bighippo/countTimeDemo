@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_root"
     android:layout_width="match_parent"
     android:layout_height="@dimen/item_delivery_height"
     android:background="@color/appBackground">
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/iv_delivery"
         android:layout_width="@dimen/item_delivery_pic_width"
         android:layout_height="@dimen/item_delivery_pic_height"
@@ -15,7 +17,9 @@
         android:layout_marginStart="@dimen/item_delivery_pic_margin_left"
         android:layout_centerVertical="true"
         android:scaleType="fitXY"
-        android:contentDescription="@string/delivery_pic_description"/>
+        android:contentDescription="@string/delivery_pic_description"
+        fresco:placeholderImage="@mipmap/ic_launcher"
+        fresco:failureImage="@mipmap/ic_launcher"/>
 
     <LinearLayout
         android:layout_width="match_parent"

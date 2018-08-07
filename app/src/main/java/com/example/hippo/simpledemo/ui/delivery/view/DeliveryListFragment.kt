@@ -66,7 +66,7 @@ class DeliveryListFragment :SupportFragment(){
         initTitle()
 
         //insert data to this adapt to show delivery list
-        mAdapter = DeliveryAdapter(activity as Context, mDeliveryList)
+        mAdapter = DeliveryAdapter(mDeliveryList)
 
         val layoutManager = LinearLayoutManager(activity)
 
@@ -75,6 +75,7 @@ class DeliveryListFragment :SupportFragment(){
         rv_delivery_list.addItemDecoration(SpaceItemDecoration(30))
 
         rv_delivery_list.adapter = mAdapter
+
 
         //set list item click listener
         recycleItemClickListener()
