@@ -5,12 +5,11 @@ This repository contains a detailed sample demo that implements MVP architecture
 <p align="center">
   <img src="https://github.com/bighippo/simpleDemo/blob/master/img/Screenshot_20180901-220934.jpg" width="250">
   <img src="https://github.com/bighippo/simpleDemo/blob/master/img/Screenshot_20180901-220944.jpg" width="250">
-</p
+</p>
+
 
 
 # Project Structure
-
-
 
 #### The app has following packages:
 1. **cache**:  The cache feature.
