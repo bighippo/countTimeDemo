@@ -13,7 +13,7 @@ This repository contains a detailed sample demo that implements MVP architecture
 # Project Structure
 
 #### The app has following packages:
-p align="center">
+<p align="center">
   <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/project_structure.PNG" width="250">
 </p>
 
