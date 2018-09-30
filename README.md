@@ -3,7 +3,9 @@
 This repository contains a detailed sample demo that implements MVP architecture in Kotlin, witch use Realm to store the record
 
 
-You can get download the countDown.apk or just clone the project to run it in your simulator
+You can get download the countDown.apk or just clone the project to run it in your simulator or real device
+
+You can build it in you AS or just use commond : gradlew assembleDebug to generate debug apk
 
 <p align="center">
   <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/S80930-100834.jpg" width="250">
