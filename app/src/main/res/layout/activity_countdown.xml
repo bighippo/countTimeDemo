@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_background">
+
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_info"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_history"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_history"
+        android:layout_alignTop="@+id/iv_info"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBarCircle"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:hint="@string/hint_task"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:minEms="5"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBarCircle"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/drawable_circle_background"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/drawable_circle_progress_background"
+        android:rotation="-90" />
+
+    <ImageView
+        android:id="@+id/iv_up"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textViewTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/icon_up"/>
+
+    <ImageView
+        android:id="@+id/iv_down"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textViewTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_down"/>
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="00:10"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+
+    <ImageView
+        android:id="@+id/iv_StartStop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBarCircle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_start" />
+
+</RelativeLayout>

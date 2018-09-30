@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- item delivery -->
+    <!-- item record -->
     <dimen name="item_delivery_height">150dp</dimen>
     <dimen name="item_delivery_pic_width">100dp</dimen>
     <dimen name="item_delivery_pic_height">100dp</dimen>
@@ -22,7 +22,7 @@
     <!-- google map -->
     <dimen name="map_height">350dp</dimen>
 
-    <!-- delivery detail-->
+    <!-- record detail-->
     <dimen name="detail_delivery_height">130dp</dimen>
     <dimen name="detail_delivery_pic_margin_left">5dp</dimen>
     <dimen name="detail_delivery_pic_margin_right">5dp</dimen>

@@ -14,14 +14,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".DeliveryApplication"
+        android:name=".CountDownApplication"
         android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/api_key"/>
-
-        <activity android:name=".ui.delivery.view.DeliveryActivity"
+        <activity android:name=".ui.countdown.view.activity.CountDownActivity"
                   android:theme="@style/ActivityTheme"
                   android:launchMode="singleTask"
                   android:screenOrientation="portrait">
@@ -30,6 +26,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.countdown.view.activity.RecordListActivity"
+            android:theme="@style/ActivityTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".ui.countdown.view.activity.PersonInfoActivity"
+            android:theme="@style/ActivityTheme"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

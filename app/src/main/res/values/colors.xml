@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#A3D3A1</color>
+    <color name="colorPrimaryDark">#3EAF93</color>
     <color name="colorAccent">#FF4081</color>
     <color name="appBackground">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="activityBackground">#E3E3E3</color>
     <color name="itemDeliveryDescription">#000000</color>
     <color name="itemDeliveryLocation">#333333</color>
     <color name="topbar_title">#000000</color>
     <color name="topbar_line">#FFEDEDED</color>
+    <color name="colorYellow">#F5FA55</color>
 </resources>

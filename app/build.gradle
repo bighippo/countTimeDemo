@@ -4,7 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-//apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -26,12 +28,10 @@ android {
     lintOptions {
         abortOnError false
     }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
 
     //kotlin
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -42,65 +42,24 @@ dependencies {
     //constraint-layout
     implementation "com.android.support.constraint:constraint-layout:$constraint_version"
 
-
     //test
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "com.android.support.test:runner:$runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
 
-
     // android recycle view
     api "com.android.support:recyclerview-v7:$appcompat_version"
-
-
-    // retrofit
-    implementation (["com.squareup.retrofit2:retrofit:$retrofit2_version",
-                    "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version",
-                    "com.squareup.retrofit2:converter-gson:$retrofit2_version"])
-
-
-    //okhttp
-    implementation (["com.squareup.okhttp3:okhttp:$okhttp_version",
-                    "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
-                    "com.squareup.okhttp:okhttp-urlconnection:$okhttp_conn_version"])
-
-
-    // gson
-    implementation ("com.google.code.gson:gson:$gson_version")
-
-
-    // rxjava
-    implementation (["io.reactivex.rxjava2:rxjava:$rxjava_version",
-                     "io.reactivex.rxjava2:rxandroid:$rxandroid_version"])
-
-
-    //RxLifecycle
-    implementation (["com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxlifecycle_version",
-                     "com.trello.rxlifecycle2:rxlifecycle-components:$rxlifecycle_version"])
-
 
     // appcompat-v7 is required
     implementation "me.yokeyword:fragmentation:$fragmentation_version"
 
-
-    // Your EventBus's version
-    implementation "org.greenrobot:eventbus:$event_bus_version"
-
-
-    //rxcache
-    implementation "com.github.VictorAlbertos.RxCache:runtime:$rxcahe_version"
-    implementation "com.github.VictorAlbertos.Jolyglot:gson:$jolyglot_gson"
-
-
-    //google map
-    implementation "com.google.android.gms:play-services-maps:$google_map_version"
-
-
     //qmui for actionBar and status bar
     implementation "com.qmuiteam:qmui:$qmui_version"
 
+    //realm extension
+    implementation "com.github.vicpinm:krealmextensions:$realm_extention"
 
-    //image tool
-    implementation "com.facebook.fresco:fresco:$fresco_version"
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:$fresco_version"
+    //For Single and Flowable queries:
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }

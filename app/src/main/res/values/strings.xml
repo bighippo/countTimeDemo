@@ -1,24 +1,7 @@
 <resources>
     <string name="app_name">SimpleDemo</string>
 
-    <!-- net work error type -->
-    <string name="service_error">service error</string>
-    <string name="not_found">not_found</string>
-    <string name="timeout">timeout</string>
-    <string name="unexpected_error">unexpected error</string>
-    <string name="network_wrong">network wrong</string>
+    <string name="hint_minute">Minute</string>
 
-
-    <string name="delivery_pic_description">Delivery Picture</string>
-
-    <!-- google api key -->
-    <string name="api_key">AIzaSyC6NWzjeEbskwvp2qOC_36RLL0AA_42xzQ</string>
-
-    <!-- fragment title -->
-    <string name="delivery_list_title">Thing to Deliver</string>
-    <string name="delivery_detail_title">Delivery Details</string>
-
-    <!-- Net Unavailable -->
-    <string name="net_unavailable">Network Unavailable</string>
-    <string name="reload">Reload</string>
+    <string name="hint_task">Enter Task...</string>
 </resources>
