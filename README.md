@@ -1,6 +1,6 @@
 # Android Kotlin MVP Architecture: Sample Demo
 
-This repository contains a detailed sample demo that implements MVP architecture in Kotlin using RxJava, Retrofit, RxCache and Fresco
+This repository contains a detailed sample demo that implements MVP architecture in Kotlin
 
 <p align="center">
   <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/S80930-100834.jpg" width="250">
