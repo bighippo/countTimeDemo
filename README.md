@@ -3,8 +3,9 @@
 This repository contains a detailed sample demo that implements MVP architecture in Kotlin using RxJava, Retrofit, RxCache and Fresco
 
 <p align="center">
-  <img src="https://github.com/bighippo/simpleDemo/blob/master/img/Screenshot_20180901-220934.jpg" width="250">
-  <img src="https://github.com/bighippo/simpleDemo/blob/master/img/Screenshot_20180901-220944.jpg" width="250">
+  <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/S80930-100834.jpg" width="250">
+  <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/S80930-100839.jpg" width="250">
+  <img src="https://github.com/bighippo/countTimeDemo/blob/master/img/S80930-100845.jpg" width="250">
 </p>
 
 
